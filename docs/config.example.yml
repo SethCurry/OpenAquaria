@@ -1,0 +1,49 @@
+units: "imperial"
+
+tanks:
+  - name: "Office Tank"
+    inhabitants:
+      - name: "Test"
+        genus: "Xiphophorus"
+        species: "maculatus"
+        born_on: 202010918
+        adopted_on: None
+    controller:
+      name: "blah"
+      camera:
+        enable: True
+        directory: /srv/openaquarium
+        interval: 6h
+      devices:
+        - name: "Thermometer"
+          type: bs2009
+          pins:
+            output: 9
+        - name: "pH"
+          type: mcp3008
+          channel: 1
+
+species:
+  - species: maculatus
+    genus: Xiphophorus
+    parameters:
+      ph:
+        ideal:
+          minimum: 6.9
+          maximum: 7.1
+        tolerable:
+          minimum: 6.0
+          maximum: 7.5
+      temperature:
+        ideal:
+          minimum: 68
+          maximum: 78
+
+taxonomy:
+  xiphophorus:
+    maculatus:
+      description: ""
+      origin: ""
+      parameters:
+        ph:
+          ideal:

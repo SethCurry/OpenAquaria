@@ -1,0 +1,32 @@
+display:
+  device: PCF8574
+  address: 0x27
+
+tanks:
+  - name: "Office Tank"
+    thermometer:
+      device: ds1812
+      pin: 18
+    inhabitants:
+      - name: "Freddy"
+        species: "Neocaridina davidi"
+      - name: "Franklin"
+        species: "Hymenochirus curtipes"
+
+genuses:
+  Neocaridina:
+    family: "Shrimp"
+    species:
+      davidi:
+        common_name: "Cherry Shrimp"
+        temperature:
+          minimum: 57 F
+          maximum: 86 F
+  Hymenochirus:
+    family: "Amphibians"
+    species:
+      curtipes:
+        common_name: "African Dwarf Frog"
+        temperature:
+          minimum: 72 F
+          maximum: 82 F

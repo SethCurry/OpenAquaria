@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: "3"
+
+env:
+  PYTHONPATH: "."
+
+tasks:
+  test:
+    cmds:
+      - poetry run pytest --cov=openaquaria ./tests
+  hub:
+    cmds:
+      - poetry run python ./openaquaria/hub/app.py
+  deploy:
+    cmds:
+      - rsync -avHSP --exclude '.venv' --exclude '.git' --exclude 'web' --exclude '.mypy_cache' --exclude '__pycache__' -e '"C:\Program Files\cwrsync\bin\ssh.exe"' ./ scurry@10.0.0.245:/home/scurry/openaquaria
